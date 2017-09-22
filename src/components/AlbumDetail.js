@@ -8,6 +8,7 @@ const AlbumDetail = (props) => {
     const {
             album: {
             thumbnail_image,
+            image,
             title,
             artist
         }
@@ -17,6 +18,7 @@ const AlbumDetail = (props) => {
         thumbnailContainerStyle,
         headerTextStyle,
         headerContentStyle,
+        imageStyle
     } = styles;
     return (
     <Card>
@@ -30,6 +32,11 @@ const AlbumDetail = (props) => {
                 <Text style={headerTextStyle}>{ title }</Text>
                 <Text>{ artist }</Text>
             </View>
+        </CardSection>
+        <CardSection>
+            <Image
+                source={{ uri: image }}
+                style={ imageStyle }/>
         </CardSection>
     </Card>
     );
@@ -52,6 +59,11 @@ const styles = {
         alignItems: 'center',
         marginLeft: 10,
         marginRight: 10
+    },
+    imageStyle: {
+        height: 300,
+        flex: 1,
+        width: null
     }
 };
 
